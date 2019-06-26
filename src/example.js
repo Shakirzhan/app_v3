@@ -7,6 +7,18 @@ import Conten from "./contents/content"
 import axios from 'axios';
  
 export default class Application extends React.Component {
+	state = {
+    menu: []
+  }
+  componentDidMount() {
+    axios.get(`http://shakirzhan.ru/api/`)
+      .then(res => {
+        const menu = res.data;
+        console.log( menu );
+        this.setState({ menu });
+      })
+  }
+
   render() {
     return(
       <Router>
