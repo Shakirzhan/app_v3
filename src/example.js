@@ -1,31 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Header from "./templates/header"
+import Footer from "./templates/footer"
+import Conten from "./contents/content"
 import axios from 'axios';
  
-export default class PersonList extends React.Component {
-  state = {
-    people: []
-  }
-  componentDidMount() {
-    axios.get(`./!json/people/index.json`)
-      .then(res => {
-        const people = res.data;
-        
-        this.setState({ people });
-      })
-  }
-
-
-
+export default class Application extends React.Component {
   render() {
-    let double;
-    if ( this.state.people.data ) {
-      double = this.state.people.data.map( it => <li key={it.id}>{it.email}</li> );
-    }
-    return (
-      <ol>
-        { double } 
-      </ol>
+    return(
+      <Router>
+        <Header />
+        <Conten /> 
+        <Footer /> 
+      </Router>
     )
   }
 }

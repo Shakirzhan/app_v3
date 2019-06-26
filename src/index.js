@@ -8,9 +8,9 @@
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './example';
+import Application from './example';
 
 ReactDOM.render(
-<App />,
+<Application />,
 document.getElementById('main-content')
 );

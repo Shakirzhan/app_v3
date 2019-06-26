@@ -6,6 +6,7 @@
     "axios": "^0.19.0",
     "babel-plugin-transform-react-statements": "^0.7.3",
     "create-react-class": "^15.6.3",
+    "query-string": "^6.8.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-dom-stream": "^0.5.1",

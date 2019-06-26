@@ -2,31 +2,41 @@ var $boolean = false;
 
 $(function() {
 	var $tabItem = $( ".main-tab__item" ),
-			$headerLogo = $( "#header__logo" );
+			$headerLogo = $( "#header__logo" ),
+			$mainContent = $( "#main-content" );
 
-	$tabItem.click(function(e) {
+	function callTab() {
+		var $tabItem = $( ".main-tab__item" );
+		
+		$tabItem.click(function(e) {
+			$tabItem.each(function(tabEl) {
+				$tabItem[tabEl].classList.remove( "main-tab__item--active" );
+			});
+		
+			setTimeout(callFunction, 1);
+
+			$( this ).addClass( "main-tab__item--active" );
+		});
+
 		$tabItem.each(function(tabEl) {
 			$tabItem[tabEl].classList.remove( "main-tab__item--active" );
+			if ( $tabItem[tabEl].children[0].pathname == window.location.pathname ) {
+				$tabItem[tabEl].classList.add( "main-tab__item--active" );
+			}
+		});
+
+		$headerLogo.click(function(e) {
+			$tabItem.each(function(tabEl) {
+				$tabItem[tabEl].classList.remove( "main-tab__item--active" );
+			});	
+			$( $tabItem[0] ).addClass( "main-tab__item--active" );
 		});
 	
-		setTimeout(callFunction, 1);
+	}
 
-		$( this ).addClass( "main-tab__item--active" );
-	});
-
-	$headerLogo.click(function(e) {
-		$tabItem.each(function(tabEl) {
-			$tabItem[tabEl].classList.remove( "main-tab__item--active" );
-		});	
-		$( $tabItem[0] ).addClass( "main-tab__item--active" );
-	});
-
-	$tabItem.each(function(tabEl) {
-		$tabItem[tabEl].classList.remove( "main-tab__item--active" );
-		if ( $tabItem[tabEl].children[0].pathname == window.location.pathname ) {
-			$tabItem[tabEl].classList.add( "main-tab__item--active" );
-		}
-	});
+	if ( !( $mainContent.innerHTML ) ) {
+		setTimeout(callTab, 50);		
+	}
 
 	callFunction();
 
