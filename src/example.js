@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
  
 export default class PersonList extends React.Component {
@@ -6,17 +7,24 @@ export default class PersonList extends React.Component {
     people: []
   }
   componentDidMount() {
-    axios.get(`https://api.direct.yandex.ru/v4/json/`)
+    axios.get(`./!json/people/index.json`)
       .then(res => {
-        const people= res.data;
-        console.log( people );
-        this.setState({ people});
+        const people = res.data;
+        
+        this.setState({ people });
       })
   }
- 
+
+
+
   render() {
+    let double;
+    if ( this.state.people.data ) {
+      double = this.state.people.data.map( it => <li key={it.id}>{it.email}</li> );
+    }
     return (
       <ol>
+        { double } 
       </ol>
     )
   }
