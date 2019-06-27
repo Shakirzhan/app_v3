@@ -14,15 +14,18 @@ export default class Application extends React.Component {
     axios.get(`http://shakirzhan.ru/api/`)
       .then(res => {
         const menu = res.data;
-        console.log( menu );
         this.setState({ menu });
       })
   }
 
   render() {
+  	console.log( this.state.menu );
+  	const res = this.state.menu.map( el => 
+  		<li key={el.id}>{el.email}</li>
+  	);
     return(
-      <Router>
-        <Header />
+    	<Router>
+	    	<Header />
         <Conten /> 
         <Footer /> 
       </Router>
