@@ -19,11 +19,11 @@ export default class Application extends React.Component {
   }
 
   render() {
-  	console.log( this.state.menu );
-  	const res = this.state.menu.map( el => 
-  		<li key={el.id}>{el.email}</li>
-  	);
-    return(
+    if ( this.state.menu ) {
+      console.log( this.state.menu );   
+    }
+  	
+  	return(
     	<Router>
 	    	<Header />
         <Conten /> 
