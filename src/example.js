@@ -11,7 +11,7 @@ export default class Application extends React.Component {
     menu: []
   }
   componentDidMount() {
-    axios.get(`http://shakirzhan.ru/api/`)
+    axios.get(`https://shakirzhan.ru/api/`)
       .then(res => {
         const menu = res.data;
         this.setState({ menu });
