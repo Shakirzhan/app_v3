@@ -7,23 +7,8 @@ import Conten from "./contents/content"
 import axios from 'axios';
  
 export default class Application extends React.Component {
-	state = {
-    menu: []
-  }
-  componentDidMount() {
-    axios.get(`http://shakirzhan.ru/api/`)
-      .then(res => {
-        const menu = res.data;
-        this.setState({ menu });
-      })
-  }
-
-  render() {
-    if ( this.state.menu ) {
-      console.log( this.state.menu );   
-    }
-  	
-  	return(
+	render() {
+    return(
     	<Router>
 	    	<Header />
         <Conten /> 
