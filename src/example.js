@@ -8,6 +8,7 @@ import axios from 'axios';
  
 export default class Application extends React.Component {
 	render() {
+		// новый мастер
     return(
     	<Router>
 	    	<Header />
