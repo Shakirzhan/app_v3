@@ -7,9 +7,10 @@ import Conten from "./contents/content"
 import axios from 'axios';
  
 export default class Application extends React.Component {
+
 	render() {
 		// новый мастер
-    return(
+		return(
     	<Router>
 	    	<Header />
         <Conten /> 
