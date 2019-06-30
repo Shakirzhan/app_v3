@@ -7,7 +7,7 @@ import Conten from "./contents/content"
 import axios from 'axios';
  
 export default class Application extends React.Component {
-	render() {
+render() {
     return(
     	<Router>
 	    	<Header />
@@ -15,5 +15,6 @@ export default class Application extends React.Component {
         <Footer /> 
       </Router>
     )
+  }
   }
 }
