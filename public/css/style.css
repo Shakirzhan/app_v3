@@ -81,6 +81,10 @@ body {
   padding-top: 20px;
 }
 
+.header__geolocation-block--active {
+  display: block;
+}
+
 .header__geolocation-list {
   margin: 0;
   padding: 0;
@@ -795,8 +799,8 @@ h2.main-form__main-custom {
   display: block;
 }
 
-.header__geolocation-button:hover + .header__geolocation-block {
-  /*display: block;*/
+.header__geolocation--hide {
+  display: none;
 }
 
 @media (max-width: 768px) {

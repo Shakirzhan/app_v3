@@ -14,17 +14,23 @@ export default class Menu extends React.Component {
         this.setState({ menu });
       })
   }
-	
-	render() {
+
+  render() {
   	let doubled;
   	if ( this.state.menu ) {
-	  	doubled = this.state.menu.map((it) => 
-	      <li className={`main-tab__item col-lg-3 ${it.class_active}`} key={`${it.id}`}>
+	  	doubled = this.state.menu.map((it) =>
+        <li className={`main-tab__item col-lg-3 ${( it.url == window.location.pathname ) ? "main-tab__item--active" : "" }`} key={`${it.id}`}>
 	        <Link to={`${it.url}`}>{`${it.name_url}`}</Link>
 	      </li> );
   	}
-  	
-  	return (
+
+    let str = window.location.pathname;
+    let res = str.match( /det/i );
+    if ( res ) {
+      doubled = false;  
+    }
+
+    return (
   		<ul className="main-tab row">
     		{ doubled }
     	</ul>
