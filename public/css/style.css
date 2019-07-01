@@ -786,17 +786,24 @@ h2.main-form__main-custom {
 }
 
 .question__dscr {
-  display: none;
-  padding: 12px 22px 22px;
   opacity: .5;
   margin: 0;
   font-size: 30px;
   color: #282828;
   background-color: #eff0f3;
+
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    -moz-transition: opacity .3s, height .3s;
+    -ms-transition: opacity .3s, height .3s;
+    transition: opacity .3s, height .3s;
 }
 
 .question__dscr--show {
-  display: block;
+    padding: 12px 22px 22px;
+    height: 100%;
+    opacity: 1;
 }
 
 .header__geolocation--hide {
