@@ -5,6 +5,7 @@ import Menu from "./menu/menu"
 import FinalReports from "./reports/final/final.js"
 import viewReport from "./reports/view/view.js"
 import QuestionContent from "./question/question.js"
+import InterimReports from "./interim_reports/interim_reports"
 
 export default class Conten extends React.Component {
   render() {
@@ -19,6 +20,8 @@ export default class Conten extends React.Component {
             	<Route path="/det/" component={viewReport} />
 
               <Route path="/question" component={QuestionContent} />
+
+              <Route path="/interimreports" component={InterimReports} />
             </div>
           </div>
         </div>
