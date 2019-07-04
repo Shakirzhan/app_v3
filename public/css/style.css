@@ -644,7 +644,7 @@ h2.main-form__main-custom {
   display: none;
 }
 
-.types__button input:checked + .types__visual::before {
+.types__visual--active::before {
   content: "";
   position: absolute;
   height: 14px;
